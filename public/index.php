@@ -1,62 +1,55 @@
 <?php
 
-Class Bag{
-    private int $compartment;
-    private string $colour;
-    private int $storage;
-    public int $items = 0;
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
+define('LARAVEL_START', microtime(true));
 
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
 
-    public function __construct(string $newColour, int $newCompartment){
-        $this->compartment = $newCompartment;
-        $this->colour = $newColour;
-        $this->storage = $this->compartment * 4;
-
-
-
-    }
-    
-    public function changeColour(string $newColour){
-        $this->colour = $newColour;
-        return $this->colour;
-    }
-
-    public function addItem(){
-        if($this->items < $this->storage){
-            $this->items++;
-            return $this->items;
-        }
-        die("De tas is vol");
-        
-    }    
-
-    public function get_compartment(){
-        return $this->compartment;
-    }
-
-    public function get_colour(){
-        return $this->colour;
-    }
-    public function get_items(){
-        return $this->items;
-    }
-
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
 }
 
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
 
-$eastpack = $bag = new Bag("black",2);
-echo "Er is/zijn " .$bag->get_compartment() . " vak(ken). <br>";
+require __DIR__.'/../vendor/autoload.php';
 
-$eastpack->changeColour("rood");
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
 
-$bag->addItem();
-$bag->addItem();
-$bag->addItem();
-$bag->addItem();
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-echo $bag->get_items() . "<br>";
+$kernel = $app->make(Kernel::class);
 
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
 
-echo "De tas is ". $eastpack->get_colour();
-
+$kernel->terminate($request, $response);
