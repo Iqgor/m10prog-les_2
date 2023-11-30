@@ -40,8 +40,8 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: mariadb
-      PMA_USER: root
-      PMA_PASSWORD: R00tp@ss
+      PMA_USER: m10prog_user
+      PMA_PASSWORD: m10prog_pass
     ports:
       - "1088:80"
 
