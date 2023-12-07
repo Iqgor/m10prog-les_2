@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>About</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,15 +17,7 @@
 </head>
 
 <body class="antialiased">
-    <header>
-        @include('./_navigation')
-    </header>
-    <nav>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque enim, iusto nostrum dicta, cupiditate a veritatis eligendi saepe qui sapiente ipsam fuga quam minima accusamus sit quidem laborum obcaecati accusantium!
-    </nav>
-    <footer>
-        <p>&#169; Igor Herrebrugh</p>
-    </footer>
+
 </body>
 
 </html>
