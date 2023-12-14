@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->char('naam',100);
             $table->text('beschrijving');
+            $table->string('image')->nullable();
             $table->boolean('actief')->default(false); 
             $table->timestamps();
         });
