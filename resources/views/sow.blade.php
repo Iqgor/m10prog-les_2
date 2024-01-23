@@ -17,11 +17,11 @@
 </head>
 
 <body class="antialiased">
-    <header class="w-full p-5 gap-2 flex justify-center flex-wrap">
-        @include('./_navigation')
-    </header>
-    <section class="flex">
+    @include('./_navigation')
+
+    <section class="flex flex-col gap-8">
         <h2>{{$project->naam}}</h2>
+        <p>{{$project->beschrijving}}</p>
     </section>
 </body>
 

@@ -17,9 +17,8 @@
 </head>
 
 <body class="antialiased">
-    <header class="w-full p-5 gap-2 flex justify-center flex-wrap">
-        @include('./_navigation')
-    </header>
+    @include('./_navigation')
+
     <nav>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque enim, iusto nostrum dicta, cupiditate a veritatis eligendi saepe qui sapiente ipsam fuga quam minima accusamus sit quidem laborum obcaecati accusantium!
     </nav>

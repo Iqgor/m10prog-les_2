@@ -17,9 +17,8 @@
 </head>
 
 <body class="antialiased">
-    <header class="w-full p-5 gap-2 flex justify-center flex-wrap">
-        @include('./_navigation')
-    </header>
+    @include('./_navigation')
+
     <section class="flex gap-2">
         @foreach($projects as $project)
         <a href="/projects/{{$project->id}}">
