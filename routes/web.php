@@ -33,4 +33,5 @@ Route::get('/about', [ \App\Http\Controllers\AboutController::class, 'index'])->
 Route::get('/mensen', [ \App\Http\Controllers\MensenController::class, 'index'])->name('mensen.index');
 Route::get('/projects',[\App\Http\Controllers\ProjectController::class,'index'])->name('projects.index');
 Route::get('/projects/add', [ \App\Http\Controllers\ProjectController::class, 'add' ])->name('project.add');
+Route::get('/projects/{project}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
 require __DIR__.'/auth.php';

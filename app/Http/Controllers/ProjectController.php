@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function add()
-    {   
+    {
         $project = new Projects();
 
         $project->naam = "Nieuwbouw Amsterdam";
@@ -19,9 +19,15 @@ class ProjectController extends Controller
         $project->save();
     }
 
-    public function index(){
+    public function index()
+    {
         $projects =  Projects::all();
 
-        return view('projects',['projects' => $projects]);
+        return view('projects', ['projects' => $projects]);
+    }
+
+    public function show(Projects $project)
+    {
+        return view('sow', ['project'=>$project]);
     }
 }

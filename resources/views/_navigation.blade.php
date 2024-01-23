@@ -1,4 +1,4 @@
-<h1>Gemeente amsterdam</h1>
+<h1><a href="/">Gemeente Amsterdam</a></h1>
 
 <ul class="flex">
     <li class="mr-3 px-4 px-2 rounded-sm bg-blue"><a href="{{route('mensen.index')}}">Mensen</a></li>

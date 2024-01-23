@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Projects</title>
+    <title>Project | {{$project->naam}}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,16 +20,8 @@
     <header class="w-full p-5 gap-2 flex justify-center flex-wrap">
         @include('./_navigation')
     </header>
-    <section class="flex gap-2">
-        @foreach($projects as $project)
-        <a href="/projects/{{$project->id}}">
-            <article class="h-1/5 w-1/4">
-                <h2 class="text-3xl font-bold underline">{{$project->naam}}</h2>
-                <img src={{ asset($project->image)}} alt="">
-            </article>
-        </a>
-
-        @endforeach
+    <section class="flex">
+        <h2>{{$project->naam}}</h2>
     </section>
 </body>
 
